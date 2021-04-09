@@ -1,17 +1,7 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {View, Text, ScrollView, StyleSheet, Button} from "react-native";
-import {getTargetPockemon} from "../../store/actions/actions";
-import {useDispatch, useSelector} from "react-redux";
 
-
-const TargetPockemon = ({route, navigation}) => {
-
-    const dispatch = useDispatch();
-    const targetPockemon = useSelector(state => state.targetPockemonReducer.targetPockemon);
-
-    useEffect(() => {
-        dispatch(getTargetPockemon(route.params.url));
-    }, [])
+const TargetPockemonComponent = ({targetPockemon, navigation}) => {
 
     return (
         <>
@@ -39,8 +29,8 @@ const TargetPockemon = ({route, navigation}) => {
                             </Text>
                         </View>
                         <View>
-                            {targetPockemon.abilities && targetPockemon.abilities.map(ab => {
-                                return <Text key={ab.ability.slot}
+                            {targetPockemon && targetPockemon.abilities && targetPockemon.abilities.map((ab, index) => {
+                                return <Text key={index}
                                              style={styles.rightText}>{ab.ability.name} </Text>
                             })}
                         </View>
@@ -66,14 +56,13 @@ const TargetPockemon = ({route, navigation}) => {
                             </Text>
                         </View>
                         <View>
-                            {targetPockemon.moves && targetPockemon.moves.map(item => {
-                                return <Text key={item.move.name}
+                            {targetPockemon && targetPockemon.moves && targetPockemon.moves.map((item, index) => {
+                                return <Text key={index}
                                              style={styles.rightText}>{item.move.name}</Text>
                             })}
                         </View>
                     </View>
                 </View>
-
             </ScrollView>
 
         </>
@@ -105,4 +94,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default TargetPockemon;
+export default TargetPockemonComponent;
