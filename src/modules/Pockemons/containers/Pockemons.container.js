@@ -1,9 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {getPockemons} from "../thunk/pockemons.thunk";
 import PockemonsComponent from "../components/Pockemons.component";
 import {getPockemonsList} from "../selectors/targetPockemon.selectors";
+import {getPockemonsRequest} from "../actions/pockemons.actions";
 
 export default ({navigation}) => {
 
@@ -11,7 +10,7 @@ export default ({navigation}) => {
     const pockemons = useSelector(getPockemonsList);
 
     useEffect(() => {
-        dispatch(getPockemons())
+        dispatch(getPockemonsRequest())
     }, [])
 
     return (

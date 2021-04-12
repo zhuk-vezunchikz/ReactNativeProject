@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, ScrollView, StyleSheet, Button} from "react-native";
 
-const TargetPockemonComponent = ({targetPockemon, navigation}) => {
 
+const TargetPockemonComponent = ({targetPockemon, navigation}) => {
     return (
         <>
             <ScrollView>
