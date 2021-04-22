@@ -3,10 +3,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import {Button} from "react-native";
 import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
-import Pockemons from "./pages/Pockemons/Pockemons";
 import {Provider} from "react-redux";
-import store from "./store/store";
-import TargetPockemon from "./pages/TargetPockemon/TargetPockemon";
+import store from "./src/store/store";
+
+import PockemonsComponent from "./src/modules/Pockemons/containers/Pockemons.container";
+import TargetPockemonComponent from "./src/modules/TargetPockemon/container/TargetPockemon.container";
 
 export default function App() {
 
@@ -29,9 +30,9 @@ export default function App() {
 
                     }}>
                         <Stack.Screen name='Pockemons'
-                                      component={Pockemons}/>
+                                      component={PockemonsComponent}/>
                         <Stack.Screen name='TargetPockemon'
-                                      component={TargetPockemon}
+                                      component={TargetPockemonComponent}
                                       options={({route}) =>
                             ({title: route.params.title.toUpperCase()})}/>
                     </Stack.Navigator>

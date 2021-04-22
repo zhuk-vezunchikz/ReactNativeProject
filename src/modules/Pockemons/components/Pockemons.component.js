@@ -1,16 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {View, ScrollView, Button, StyleSheet} from "react-native";
-import {useDispatch, useSelector} from "react-redux";
-import {getPockemons} from "../../store/actions/actions";
 
-const Pockemons = ({navigation}) => {
 
-    const dispatch = useDispatch();
-    const pockemon = useSelector(state => state.pockemonsReducer.pockemons)
-
-    useEffect(() => {
-        dispatch(getPockemons())
-    }, [])
+const PockemonsComponent = ({navigation, pockemon}) => {
 
     return (
         <>
@@ -46,4 +38,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default Pockemons;
+export default PockemonsComponent;
