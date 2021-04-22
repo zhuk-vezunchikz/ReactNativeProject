@@ -1,6 +1,4 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {Button} from "react-native";
+import React from 'react';
 import {NavigationContainer} from "@react-navigation/native";
 import {createStackNavigator} from "@react-navigation/stack";
 import {Provider} from "react-redux";
@@ -42,20 +40,3 @@ export default function App() {
 
     );
 }
-
-const styles = StyleSheet.create({
-        container: {
-            flex: 1,
-            backgroundColor: '#fff',
-            alignItems: 'center',
-            justifyContent: 'center',
-        }
-        ,
-        item: {
-            alignItems: 'center',
-            justifyContent: 'center',
-
-        }
-    }
-    )
-;

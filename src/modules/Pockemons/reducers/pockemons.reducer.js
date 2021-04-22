@@ -17,15 +17,6 @@ function pockemonsReducer(state = initialState, action) {
             ...state,
             loading: false
         }
-        case "TARGET_POCKEMON": return {
-            ...state,
-            targetPockemon: action.payload
-        }
-        case "TARGET_URL": return {
-            ...state,
-            targetUrl: action.payload
-        }
-
         default: return state;
     }
 }
